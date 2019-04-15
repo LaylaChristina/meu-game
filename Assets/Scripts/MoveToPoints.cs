@@ -6,7 +6,7 @@ public class MoveToPoints : MonoBehaviour
 {
     public GameObject obj;
     public Transform pos1, pos2;
-    public float WaitTime  = 0.5f;
+    public float waitTime  = 0.5f;
     public float Speed = 2f;
 
     Vector3 nextPos;
@@ -25,12 +25,12 @@ public class MoveToPoints : MonoBehaviour
        while (true){
            if(obj.transform.localPosition == pos1.localPosition){
                nextPos = pos2.localPosition;
-               yield return new WaitForSeconds(WaitTime);
+               yield return new WaitForSeconds(waitTime);
            }
 
            if(obj.transform.localPosition == pos2.localPosition){
                nextPos = pos1.localPosition;
-               yield return new WaitForSeconds(WaitTime);
+               yield return new WaitForSeconds(waitTime);
            }
            obj.transform.localPosition = Vector3.MoveTowards(obj.transform.localPosition, nextPos, Speed*Time.deltaTime);
            yield return null;
