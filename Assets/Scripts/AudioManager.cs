@@ -14,8 +14,8 @@ public class AudioManager : MonoBehaviour
            instance = this;
        }
    }
-   public void PlaySoundCoinPickup(GameObject obj) {
-       AudioSource.PlayClipAtPoint(audioSFX.coinPickup, obj.transform.position);
+   public void PlaySoundCandy(GameObject obj) {
+       AudioSource.PlayClipAtPoint(audioSFX.candy, obj.transform.position);
    }
    
    public void PlaySoundFail(GameObject obj) {
@@ -24,5 +24,9 @@ public class AudioManager : MonoBehaviour
 
    public void PlaySoundLevelComplete(GameObject obj) {
        AudioSource.PlayClipAtPoint(audioSFX.levelComplete, obj.transform.position);
+   }
+
+   public void PlaySoundPower(GameObject obj) {
+       AudioSource.PlayClipAtPoint(audioSFX.power, obj.transform.position);
    }
 }

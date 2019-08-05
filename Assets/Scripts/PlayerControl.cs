@@ -7,27 +7,27 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
-    public float fallLimit = 2f;
-
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    void Update(){
-        if (rb.velocity.y < fallLimit){
-            anim.SetInteger("state", 0);
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Coin")){
             SFXManager.instance.ShowCoinParticles(other.gameObject);
-            AudioManager.instance.PlaySoundCoinPickup(other.gameObject);
+            AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
             Impulse(10);
+        }
+
+            if (other.gameObject.CompareTag("Power")){
+            SFXManager.instance.ShowCoinParticles(other.gameObject);
+            AudioManager.instance.PlaySoundCandy(other.gameObject);
+            Destroy(other.gameObject);
+            LevelManager.instance.IncrementCoinCount();
+            Impulse(20);
         }
 
         if (other.gameObject.CompareTag("Gift")){
@@ -38,6 +38,8 @@ public class PlayerControl : MonoBehaviour
             LevelManager.instance.ShowLevelCompletePanel();
 
         }
+
+        
         
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
             KillPlayer();
@@ -63,7 +65,6 @@ public class PlayerControl : MonoBehaviour
         void Impulse(float force){
             rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up*force, ForceMode2D.Impulse);
-            anim.SetInteger("state", 1);
         }
 
         void DestroyPlayer(){

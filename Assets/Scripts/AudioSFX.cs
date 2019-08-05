@@ -6,9 +6,10 @@ using System;
 [Serializable]
 public class AudioSFX 
 {
-   public AudioClip coinPickup;
+   public AudioClip candy;
    public AudioClip fail;
    public AudioClip levelComplete;
+   public AudioClip power;
    
 
 
