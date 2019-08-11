@@ -7,7 +7,6 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
-
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -19,7 +18,7 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
-            Impulse(10);
+            Impulse(20);
         }
 
             if (other.gameObject.CompareTag("Power")){
@@ -27,7 +26,7 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
-            Impulse(20);
+            Impulse(25);
         }
 
         if (other.gameObject.CompareTag("Gift")){
