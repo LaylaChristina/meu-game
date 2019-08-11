@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 3793944745433897825}
   - component: {fileID: 3793944745433897826}
   - component: {fileID: 3793944745433897827}
+  - component: {fileID: 2243690104539028835}
   - component: {fileID: 3793944745433897824}
+  - component: {fileID: 7161192643032946518}
   m_Layer: 9
   m_Name: Flame
   m_TagString: Projectile
@@ -100,6 +102,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &2243690104539028835
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793944745433897828}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!70 &3793944745433897824
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,3 +139,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.13795675, y: 0.008116468}
   m_Size: {x: 0.77964735, y: 0.56054455}
   m_Direction: 1
+--- !u!114 &7161192643032946518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793944745433897828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d4a2a68ecc5c4488faa8e59eff1ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 4

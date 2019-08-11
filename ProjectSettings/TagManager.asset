@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
-  - Ghost
   - Projectile
   - Forbidden
   - Gift
   - Power
+  - Zombie
+  - Ghost
   layers:
   - Default
   - TransparentFX
