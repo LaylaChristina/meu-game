@@ -7870,7 +7870,7 @@ GameObject:
   - component: {fileID: 1779750647}
   m_Layer: 12
   m_Name: Area
-  m_TagString: Untagged
+  m_TagString: Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7902,7 +7902,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16761589, y: -0.1047678}
+  m_Offset: {x: -0.0752902, y: -0.1047678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7913,7 +7913,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.37512, y: 15.624525}
+  m_Size: {x: 9.421485, y: 15.624525}
   m_EdgeRadius: 0
 --- !u!1 &1781702792
 GameObject:
@@ -10016,7 +10016,7 @@ PrefabInstance:
     - target: {fileID: 5441772717932338397, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.62
+      value: 77.2
       objectReference: {fileID: 0}
     - target: {fileID: 5441772717932338397, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}

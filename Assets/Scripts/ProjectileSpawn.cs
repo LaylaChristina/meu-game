@@ -17,6 +17,8 @@ public class ProjectileSpawn : MonoBehaviour
 
     public Vector3[] directions;
 
+    bool naCamera = false;
+
     void Start()
     {
         parent = GameObject.Find("Tape");
@@ -27,11 +29,29 @@ public class ProjectileSpawn : MonoBehaviour
     IEnumerator Spawn (){
         while(true){
             yield return new WaitForSeconds(waitTime);
-            for (int i=0; i<directions.Length; i++){
-                GameObject projectile = Instantiate (prefab, spawnPoint.transform.position, Quaternion.identity);
-                projectile.transform.SetParent(parent.transform);
-                projectile.GetComponent<Rigidbody2D>().velocity = projectileSpeed * directions[i];
+            if (naCamera) {
+                for (int i=0; i<directions.Length; i++){
+                    GameObject projectile = Instantiate (prefab, spawnPoint.transform.position, Quaternion.identity);
+                    projectile.transform.SetParent(parent.transform);
+                    projectile.GetComponent<Rigidbody2D>().velocity = projectileSpeed * directions[i];
+                }
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.gameObject.CompareTag("Area")){
+            Debug.Log("Entrou");
+            naCamera = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other){
+        if (other.gameObject.CompareTag("Area")){
+            Debug.Log("Saiu");
+            naCamera = false;
+        }
+    }
+
+
 }

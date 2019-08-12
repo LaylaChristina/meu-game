@@ -11,6 +11,7 @@ TagManager:
   - Power
   - Zombie
   - Ghost
+  - Area
   layers:
   - Default
   - TransparentFX
