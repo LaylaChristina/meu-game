@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    public int lives = 3;
+    public Text txtLife;
+
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -41,7 +45,12 @@ public class PlayerControl : MonoBehaviour
         
         
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
-            KillPlayer();
+            lives = lives - 1;
+            txtLife.text = "x " + lives;
+            AudioManager.instance.PlaySoundDamage(gameObject);
+            if (lives == 0) {
+                KillPlayer();
+            }
         }
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Forbidden")) {

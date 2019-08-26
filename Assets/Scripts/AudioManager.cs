@@ -14,10 +14,16 @@ public class AudioManager : MonoBehaviour
            instance = this;
        }
    }
+
    public void PlaySoundCandy(GameObject obj) {
        AudioSource.PlayClipAtPoint(audioSFX.candy, obj.transform.position);
    }
    
+   public void PlaySoundDamage(GameObject obj) {
+       Debug.Log("hahaha");
+       AudioSource.PlayClipAtPoint(audioSFX.damage, obj.transform.position);
+   }
+
    public void PlaySoundFail(GameObject obj) {
        AudioSource.PlayClipAtPoint(audioSFX.fail, obj.transform.position);
    }
