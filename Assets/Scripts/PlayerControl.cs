@@ -22,15 +22,7 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
-            Impulse(16);
-        }
-
-            if (other.gameObject.CompareTag("Power")){
-            SFXManager.instance.ShowCoinParticles(other.gameObject);
-            AudioManager.instance.PlaySoundCandy(other.gameObject);
-            Destroy(other.gameObject);
-            LevelManager.instance.IncrementCoinCount();
-            Impulse(22);
+            Impulse(14);
         }
 
         if (other.gameObject.CompareTag("Gift")){
