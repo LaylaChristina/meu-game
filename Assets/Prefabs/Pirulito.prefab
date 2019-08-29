@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 91790156122864190}
   m_Layer: 10
   m_Name: Pirulito
-  m_TagString: Power
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.010473251}
-  m_Size: {x: 0.75, y: 1.3533745}
+  m_Offset: {x: 0, y: 0.013651371}
+  m_Size: {x: 1.2324862, y: 2.1543016}
   m_Direction: 0
