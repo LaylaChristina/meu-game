@@ -39,7 +39,9 @@ public class PlayerControl : MonoBehaviour
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
             lives = lives - 1;
             txtLife.text = "x " + lives;
+            SFXManager.instance.ShowEnemyParticles(other.gameObject);
             AudioManager.instance.PlaySoundDamage(gameObject);
+            Destroy(other.gameObject);
             if (lives == 0) {
                 KillPlayer();
             }

@@ -123,6 +123,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Z_Donut
       objectReference: {fileID: 0}
+    - target: {fileID: 3424879350643158069, guid: a2791c8e9fb416543a1ff2845c24301d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.007493973
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424879350643158069, guid: a2791c8e9fb416543a1ff2845c24301d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.8351288
+      objectReference: {fileID: 0}
     - target: {fileID: 3903640057967187947, guid: a2791c8e9fb416543a1ff2845c24301d,
         type: 3}
       propertyPath: m_LocalPosition.x
