@@ -112,13 +112,14 @@ PrefabInstance:
     - target: {fileID: 5816440408471890182, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
       propertyPath: projectileSpeed
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5816440408471890182, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6704165097943721004, guid: a350d24e853f4944088fc009be5c8d7b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2020b40862642d24aaf0cc7b0718d4b7, type: 3}
 --- !u!4 &6085749198402491548 stripped
@@ -147,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 7204207375454454959, guid: 3c5df5e875415e046adb21c1df1cec17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7204207375454454959, guid: 3c5df5e875415e046adb21c1df1cec17,
         type: 3}
