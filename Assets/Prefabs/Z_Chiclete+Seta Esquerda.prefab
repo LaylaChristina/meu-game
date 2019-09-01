@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 5816440408471890182, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
       propertyPath: waitTime
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5816440408471890182, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
@@ -112,7 +112,7 @@ PrefabInstance:
     - target: {fileID: 5816440408471890182, guid: 2020b40862642d24aaf0cc7b0718d4b7,
         type: 3}
       propertyPath: projectileSpeed
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2020b40862642d24aaf0cc7b0718d4b7, type: 3}

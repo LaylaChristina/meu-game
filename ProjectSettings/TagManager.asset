@@ -12,6 +12,7 @@ TagManager:
   - Zombie
   - Ghost
   - Area
+  - LimitArea
   layers:
   - Default
   - TransparentFX
