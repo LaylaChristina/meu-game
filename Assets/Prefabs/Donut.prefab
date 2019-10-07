@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 594522880562776641}
   m_Layer: 10
   m_Name: Donut
-  m_TagString: Coin
+  m_TagString: Super
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

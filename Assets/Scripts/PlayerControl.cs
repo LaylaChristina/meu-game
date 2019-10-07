@@ -25,6 +25,45 @@ public class PlayerControl : MonoBehaviour
             Impulse(14);
         }
 
+        if (other.gameObject.CompareTag("Loli")){
+            SFXManager.instance.ShowCoinParticles(other.gameObject);
+            AudioManager.instance.PlaySoundCandy(other.gameObject);
+            Destroy(other.gameObject);
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            Impulse(16);
+        }
+
+
+        if (other.gameObject.CompareTag("Power")){
+            SFXManager.instance.ShowCoinParticles(other.gameObject);
+            AudioManager.instance.PlaySoundCandy(other.gameObject);
+            Destroy(other.gameObject);
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            Impulse(16);
+        }
+
+        if (other.gameObject.CompareTag("Super")){
+            SFXManager.instance.ShowCoinParticles(other.gameObject);
+            AudioManager.instance.PlaySoundCandy(other.gameObject);
+            Destroy(other.gameObject);
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            LevelManager.instance.IncrementCoinCount();
+            Impulse(16);
+        }
+
         if (other.gameObject.CompareTag("Gift")){
             StopMusicAndTape();
             AudioManager.instance.PlaySoundLevelComplete(gameObject);
