@@ -9,6 +9,14 @@ public class PlayerControl : MonoBehaviour
     Animator anim;
     public int lives = 3;
     public Text txtLife;
+    public float TimeAfterHurt = 2;
+    public Color flashColor;
+    public Color regularColor;
+    public float flashTime;
+    public int numberFlashs;
+    public SpriteRenderer hurtSprite;
+    bool isHurting;
+
 
 
     void Start(){
@@ -25,7 +33,7 @@ public class PlayerControl : MonoBehaviour
             Impulse(14);
         }
 
-        if (other.gameObject.CompareTag("Loli")){
+        else if (other.gameObject.CompareTag("Loli")){
             SFXManager.instance.ShowCoinParticles(other.gameObject);
             AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
@@ -35,7 +43,7 @@ public class PlayerControl : MonoBehaviour
         }
 
 
-        if (other.gameObject.CompareTag("Power")){
+        else if (other.gameObject.CompareTag("Power")){
             SFXManager.instance.ShowCoinParticles(other.gameObject);
             AudioManager.instance.PlaySoundCandy(other.gameObject);
             Destroy(other.gameObject);
@@ -47,24 +55,8 @@ public class PlayerControl : MonoBehaviour
             Impulse(16);
         }
 
-        if (other.gameObject.CompareTag("Super")){
-            SFXManager.instance.ShowCoinParticles(other.gameObject);
-            AudioManager.instance.PlaySoundCandy(other.gameObject);
-            Destroy(other.gameObject);
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            LevelManager.instance.IncrementCoinCount();
-            Impulse(16);
-        }
 
-        if (other.gameObject.CompareTag("Gift")){
+        else if (other.gameObject.CompareTag("Gift")){
             StopMusicAndTape();
             AudioManager.instance.PlaySoundLevelComplete(gameObject);
             DestroyPlayer();
@@ -78,8 +70,10 @@ public class PlayerControl : MonoBehaviour
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
             lives = lives - 1;
             txtLife.text = "x " + lives;
-            SFXManager.instance.ShowEnemyParticles(other.gameObject);
             AudioManager.instance.PlaySoundDamage(gameObject);
+            anim.SetInteger ("state", 1);
+            StartCoroutine(HurtBlinker());
+            SFXManager.instance.ShowEnemyParticles(other.gameObject);
             Destroy(other.gameObject);
             if (lives == 0) {
                 KillPlayer();
@@ -87,7 +81,15 @@ public class PlayerControl : MonoBehaviour
         }
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Forbidden")) {
-            KillPlayer();
+            lives = lives - 1;
+            txtLife.text = "x " + lives;
+            AudioManager.instance.PlaySoundDamage(gameObject);
+            anim.SetInteger ("state", 1);
+            StartCoroutine(HurtBlinker());
+            Impulse(16);
+            if (lives == 0) {
+                KillPlayer();
+            }
         }
 
         void StopMusicAndTape(){
@@ -115,5 +117,19 @@ public class PlayerControl : MonoBehaviour
         }
 
 
+    }
+
+    private IEnumerator HurtBlinker (){
+        int temp = 0;
+        Physics2D.IgnoreLayerCollision (8, 9, true);
+        while(temp < numberFlashs){
+            hurtSprite.color = flashColor;
+            yield return new WaitForSeconds(flashTime);
+            hurtSprite.color = regularColor;
+            yield return new WaitForSeconds(flashTime);
+            temp++;
+        }
+        Physics2D.IgnoreLayerCollision (8, 9, false);
+        anim.SetInteger ("state", 0);
     }
 }
