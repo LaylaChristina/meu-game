@@ -18296,7 +18296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e5a4aa56b15441ba8c0b2c2effcfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 30
+  lives: 3
   txtLife: {fileID: 871101178}
   TimeAfterHurt: 2
   flashColor: {r: 0.9528302, g: 0.6431373, b: 0.818173, a: 0.47058824}
@@ -19684,7 +19684,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level01
+          m_StringArgument: Level03
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

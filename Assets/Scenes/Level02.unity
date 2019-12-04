@@ -14933,7 +14933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e5a4aa56b15441ba8c0b2c2effcfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 30
+  lives: 3
   txtLife: {fileID: 824693149}
   TimeAfterHurt: 2
   flashColor: {r: 0.9529412, g: 0.6431373, b: 0.81960785, a: 0.47058824}
